@@ -1,0 +1,1503 @@
+/* font */
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/Avenir-Next-LT-Pro-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirB';
+    src: url('/fonts/Avenir-Next-LT-Pro-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Global Styles */
+body {
+  font-family: 'Avenir', sans-serif;
+  background-color: rgba(245, 245, 247);
+}
+
+.achat-vente-jeux-vidéo {
+  display: flex;
+  flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+  justify-content: center;                              /* Centre les enfants verticalement */
+  max-width: 98em;
+}
+
+
+.achat-vente-jeux-video-occasion {
+  margin: 0px;
+  padding: 0em 0.2em;
+  font-size: 5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(255, 255, 255, 1);
+}
+
+
+.achat-vente-occasion-console, .achat-revente-occasion-ordinateurs, .achat-vente-occasion-jeux-video, .achat-vente-occasion-produits-derives, .achat-vente-occasion-gaming {
+  font-size: 5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(255, 255, 255, 1);
+  padding: 0;
+  margin: 0em 0em 0.5em 0em;
+}
+
+.achat-revente-occasion-france, .achat-revente-occasion-consoles, .achat-vente-occasion-ordinateurs, .achat-revente-occasion-jeux-vidéo, .achat-revente-occasion-produits-dérivés, .achat-revente-occasion-gaming  {
+  font-size: 3em;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 1);
+  padding: 0;
+  margin: 0em 0em 1em 0em;
+}
+
+h3 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 0 0.5em 0;
+}
+
+a {
+  padding: 0;
+  margin: 0em 0em 0em 0em;
+}
+
+/* Main Banner ixewo styles ----------------------- */
+.header-container, .subheader-container {
+    display: flex;
+    flex-direction: column; /* Pour .subheader-container */
+    align-items: center; /* Centrer les éléments horizontalement */
+    justify-content: center; /* Centrer les éléments verticalement si nécessaire */
+}
+
+.header-container {
+    flex-direction: row; /* Aligner les éléments horizontalement */
+    margin-bottom: 1em;
+}
+
+.logo-ixewo-black {
+    height: 5em;
+}
+
+
+
+.occasion-consoles-web {
+  /* background parameters */
+  background-image: url("/images/home-le-projet.jpg");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* parametres dispositions texts*/
+  display: flex;
+  flex-direction: column;     /* Organise les enfants verticalement */
+  align-items: center;        /* Centre les enfants horizontalement */
+  height: 40em;               /* Prend toute la hauteur de la fenêtre */
+  justify-content: center;                              /* Centre les enfants verticalement */
+  margin-top: 2.8em;
+
+}
+
+.button-ixewo {
+  font-size: 2em;
+  font-weight: lighter;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+  background-color: rgba(88, 174, 240);
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                    /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;     /* Transition pour background et bordure */
+}
+
+.button-ixewo:hover {
+  background-color: transparent;                      /* Le fond disparaît */
+  border: 0.2em solid rgba(255, 255, 255, 1);          /* La bordure apparaît */
+  color: rgba(255, 255, 255, 1);                /* La couleur du texte change */
+}
+
+
+
+
+
+
+/* message d'erreur */
+#errorMessage {
+    display:none;                           /* Par défaut, le pop-up est caché */
+    color: rgb(255, 255, 255);
+    position: fixed;                        /* Positionnement fixe par rapport à la fenêtre */
+    top: 50%;                               /* Centré verticalement */
+    left: 50%;                              /* Centré horizontalement */
+    transform: translate(-50%, -50%);       /* Ajustements pour le centrage */
+    padding: 1em;
+    background-color: rgb(0, 0, 0);
+    border-radius: 3em;
+    border: 0.2em solid rgba(255, 255, 255);
+    z-index: 1100;                                  /* Assurez-vous qu'il apparaît au-dessus des autres éléments */
+    box-shadow: 0 0 0px;     /* Ombre pour le mettre en évidence */
+    max-width: 100%;                                 /* Limitez la largeur pour de meilleurs visuels */
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'AvenirB', sans-serif;
+}
+
+/* Arrière-plan semi-transparent lors de l'affichage du pop-up */
+#errorMessage-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1099;                                      /* Juste derrière le pop-up */
+}
+
+
+#errorMessage a {
+    background-color: rgba(88, 174, 240);
+    color: rgba(255,255,255);
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 2em;
+}
+
+#errorMessage a:hover {
+    background-color: rgba(88, 174, 240, 0);
+    color: rgba(88, 174, 240);
+}
+
+
+
+
+
+
+
+/* Styles pour l'ensemble consoles --------------------- */
+.home-consoles {
+  display: flex;
+  height: 40em;          
+  margin: 0.75em 0em 0em 0em;
+  left: 50%; 
+
+}
+
+/* Styles pour la partie gauche affichage */
+.vers-consoles {
+  /* Background parameters */
+  flex: 0.5;                                            /* ne prends que la moité de la largeur */
+  background-image: url("/images/home-consoles.jpg");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 203%;
+  height: 40em;
+  overflow: hidden;
+
+  /* parametres textes */
+  display: flex;
+  flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+  justify-content: center;                              /* Centre les enfants verticalement */
+  align-items: center;                                 /* Centre les enfants horizontalement */                           
+  
+}
+
+.consoles-button {
+  font-size: 2em;
+  font-weight: lighter;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+  background-color: rgba(241, 49, 40);
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+}
+
+.consoles-button:hover {
+  background-color: transparent;                          /* Le fond disparaît */
+  border: 0.2em solid rgba(255, 255, 255, 1);        /* La bordure apparaît */
+  color: rgba(255, 255, 255, 1);                  /* La couleur du texte change */
+}
+
+
+/* Styles pour partie droite affichage consoles --------------------------------------------- */
+.produits-consoles {
+  position: relative;
+  flex: 0.5;                                          /* Prends 50% de la largeur */
+  height: 40em;                                       /* Spécification de la hauteur */
+  display: grid;                                      /* format d'affichage */
+  grid-template-columns: repeat(3, 1fr);              /* 3 colonnes de taille égale */
+  grid-template-rows: repeat(2, 1fr);                 /* 2 lignes de taille égale*/
+  row-gap: 2.2em;                                       /* écart entre les lignes */
+  column-gap: 0.75em;                                    /* écart entre les colonnes */
+  place-items: top;                                   /* Centre à la fois horizontalement et verticalement */
+  overflow: hidden;
+  margin-left: 0.75em;     
+}
+
+.consoles-prev-btn,
+.consoles-next-btn {
+  position: absolute;
+  background: rgba(0, 0, 0);
+  font-size: 1.2em;
+  color: rgba(255, 255, 255);
+  border-radius: 1em;
+  cursor: pointer;
+  padding: 0.1em 0.4em;
+  border: 0.2em solid transparent;                          /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;           /* Transition pour background et bordure */
+  top: 47.2%;
+}
+
+.consoles-prev-btn:hover,
+.consoles-next-btn:hover {
+  background-color: transparent;                            /* Le fond disparaît */
+  border: 0.2em solid rgba(0, 0, 0);        /* La bordure apparaît */
+  color: rgba(0, 0, 0);                                /* La couleur du texte change */
+}
+
+.consoles-prev-btn {
+  left: 15%;
+}
+
+.consoles-next-btn {
+  right: 15%;
+}
+
+
+/* barre de progression carrousel consoles */
+
+.progress-container-consoles {
+  position: absolute;
+  width: auto;
+  background-color: rgba(0, 0, 0);
+  border-radius: 1em;
+  top: 48.6%;
+  left: 25%;
+  right: 25%;
+  height: 0.75em;
+}
+
+.progress-bar-consoles {
+  background-color: rgba(241, 49, 40);
+  background-position: bottom;
+  color: rgba(0, 0, 0, 0);
+  border-radius: 1em;
+  text-align: center;
+  line-height: 0;
+  margin: 0.18em 0.25em;
+  height: 0.4em;
+}
+
+.price-favorite-consoles {
+  display: flex;
+  position: relative;
+  top: -2.7em;
+  height: 2.7em;
+  border-radius : 0em 0em 1em 1em;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0,0,0);
+}
+
+/* Mise en page affichage produits carrousel */
+.product-card-consoles { /*mise en page espace produits*/
+  padding: 0em;
+  margin: 0em;
+  width: auto;
+  height: 18.7em;
+}
+
+.product-card-consoles.visible {
+  opacity: 1;
+  display: block;
+}
+
+.product-card-consoles img {
+  object-fit: cover;          /* Couvre tout l'espace disponible sans déformer l'image */
+  width: 100%;
+  height: 100%;
+  object-position: center;    /* Le point d'intérêt de l'image est centré */
+  size : cover;
+  overflow: hidden;           /* Cache les parties de l'image qui dépassent du conteneur */
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255);
+}
+
+
+/* Alignement prix et icone favoris même ligne */
+
+
+.product-card-consoles p {
+  font-size: 1em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(245, 245, 247, 0.95);
+  margin: 0.8em 0em 0.8em 1em;
+}
+
+
+
+
+
+
+
+/* Styles pour l'ensemble ordinateurs --------------------- */
+.home-ordinateurs {
+  opacity: 0;
+  transform: scale(90%);
+  transition: opacity 1s, transform 1s;
+  display: flex;
+  height: 40em;          
+  margin: 0.75em 0em 0em 0em;
+}
+
+/* Styles pour la partie gauche affichage */
+.vers-ordinateurs {
+  /* Background parameters */
+  flex: 0.5;                                            /* ne prends que la moité de la largeur */
+  background-image: url("/images/home-ordinateurs.jpg");
+  background-position: right;
+  background-size: cover;
+  height: 40em;
+  overflow: hidden;
+
+  /* parametres textes */
+  display: flex;
+  flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+  justify-content: center;                              /* Centre les enfants verticalement */
+  align-items: center;                                 /* Centre les enfants horizontalement */                             
+  
+}
+
+.ordinateurs-button {
+  font-size: 2em;
+  font-weight: lighter;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+  background-color: rgba(208, 40, 241);
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+}
+
+.ordinateurs-button:hover {
+  background-color: transparent;                          /* Le fond disparaît */
+  border: 0.2em solid rgba(255, 255, 255);        /* La bordure apparaît */
+  color: rgba(255, 255, 255);                     /* La couleur du texte change */
+}
+
+
+/* Styles pour partie droite affichage consoles --------------------------------------------- */
+.produits-ordinateurs {
+  position: relative;
+  flex: 0.5;                                          /* Prends 50% de la largeur */
+  height: 40em;                                       /* Spécification de la hauteur */
+  display: grid;                                      /* format d'affichage */
+  grid-template-columns: repeat(3, 1fr);              /* 3 colonnes de taille égale */
+  grid-template-rows: repeat(2, 1fr);                 /* 2 lignes de taille égale*/
+  row-gap: 2.2em;                                       /* écart entre les lignes */
+  column-gap: 0.75em;                                    /* écart entre les colonnes */
+  place-items: top;                                   /* Centre à la fois horizontalement et verticalement */
+  overflow: hidden;
+  margin-right: 0.75em;     
+}
+
+.ordinateurs-prev-btn,
+.ordinateurs-next-btn {
+  position: absolute;
+  background: rgba(0, 0, 0);
+  font-size: 1.2em;
+  color: rgba(255, 255, 255);
+  border-radius: 1em;
+  cursor: pointer;
+  padding: 0.1em 0.4em;
+  border: 0.2em solid transparent;                          /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;           /* Transition pour background et bordure */
+  top: 47.2%;
+}
+
+.ordinateurs-prev-btn:hover,
+.ordinateurs-next-btn:hover {
+  background-color: transparent;                            /* Le fond disparaît */
+  border: 0.2em solid rgba(0, 0, 0);
+  color: rgba(0, 0, 0);                       /* La couleur du texte change */
+}
+
+.ordinateurs-prev-btn {
+  left: 15%;
+}
+
+.ordinateurs-next-btn {
+  right: 15%;
+}
+
+
+/* barre de progression carrousel ordianteurs */
+
+.progress-container-ordinateurs {
+  position: absolute;
+  width: auto;
+  background-color: rgba(0, 0, 0);
+  border-radius: 1em;
+  top: 48.6%;
+  left: 25%;
+  right: 25%;
+  height: 0.75em;
+}
+
+.progress-bar-ordinateurs {
+  background-color: rgba(208, 40, 241);
+  background-position: bottom;
+  color: rgba(0, 0, 0, 0);
+  border-radius: 1em;
+  text-align: center;
+  line-height: 0;
+  margin: 0.18em 0.25em;
+  height: 0.4em;
+}
+
+.price-favorite-ordinateurs {
+  display: flex;
+  position: relative;
+  top: -2.7em;
+  height: 2.7em;
+  border-radius : 0em 0em 1em 1em;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0,0,0);
+
+}
+
+/* Mise en page affichage produits carrousel */
+.product-card-ordinateurs { /*mise en page espace produits*/
+  padding: 0em;
+  margin: 0em;
+  width: auto;
+  height: 18.7em;
+}
+
+.product-card-ordinateurs.visible {
+  opacity: 1;
+  display: block;
+}
+
+.product-card-ordinateurs img {
+  object-fit: cover;          /* Couvre tout l'espace disponible sans déformer l'image */
+  width: 100%;
+  height: 100%;
+  object-position: center;    /* Le point d'intérêt de l'image est centré */
+  size : cover;
+  overflow: hidden;           /* Cache les parties de l'image qui dépassent du conteneur */
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255);
+}
+
+
+/* Alignement prix et icone favoris même ligne */
+.product-card-ordinateurs p {
+  font-size: 1em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(245, 245, 247, 0.95);
+  margin: 0.8em 0em 0.8em 1em;
+}
+
+
+
+
+
+
+
+/* Styles pour l'ensemble jeux-viéos --------------------- */
+.home-jeux {
+  opacity: 0;
+  transform: scale(90%);
+  transition: opacity 1s, transform 1s;
+  display: flex;
+  height: 40em;          
+  margin: 0.75em 0em 0em 0em;
+}
+
+/* Styles pour la partie gauche affichage */
+.vers-jeux {
+  /* Background parameters */
+  flex: 0.5;                                            /* ne prends que la moité de la largeur */
+  background-image: url("/images/home-jeux-videos.jpg");
+  background-position: left;
+  background-size: cover;
+  height: 40em;
+  overflow: hidden;
+
+  /* parametres textes */
+  display: flex;
+  flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+  justify-content: center;                              /* Centre les enfants verticalement */
+  align-items: center;                                 /* Centre les enfants horizontalement */                  
+  
+}
+
+.jeux-button {
+  font-size: 2em;
+  font-weight: lighter;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+  background-color: rgba(240, 214, 40);
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+}
+
+.jeux-button:hover {
+  background-color: transparent;                          /* Le fond disparaît */
+  border: 0.2em solid rgba(255, 255, 255);        /* La bordure apparaît */
+  color: rgba(255, 255, 255);                     /* La couleur du texte change */
+}
+
+
+/* Styles pour partie droite affichage consoles --------------------------------------------- */
+.produits-jeux {
+  position: relative;
+  flex: 0.5;                                          /* Prends 50% de la largeur */
+  height: 40em;                                       /* Spécification de la hauteur */
+  display: grid;                                      /* format d'affichage */
+  grid-template-columns: repeat(3, 1fr);              /* 3 colonnes de taille égale */
+  grid-template-rows: repeat(2, 1fr);                 /* 2 lignes de taille égale*/
+  row-gap: 2.2em;                                       /* écart entre les lignes */
+  column-gap: 0.75em;                                    /* écart entre les colonnes */
+  place-items: top;                                   /* Centre à la fois horizontalement et verticalement */
+  overflow: hidden;
+  margin-left: 0.75em;         
+}
+
+.jeux-prev-btn,
+.jeux-next-btn {
+  position: absolute;
+  background: rgba(0, 0, 0);
+  font-size: 1.2em;
+  color: rgba(255, 255, 255);
+  border-radius: 1em;
+  cursor: pointer;
+  padding: 0.1em 0.4em;
+  border: 0.2em solid transparent;                          /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;           /* Transition pour background et bordure */
+  top: 47.2%;
+}
+
+.jeux-prev-btn:hover,
+.jeux-next-btn:hover {
+  background-color: transparent;                            /* Le fond disparaît */
+  border: 0.2em solid rgba(0, 0, 0);                  /* La bordure apparaît */
+  color: rgba(0, 0, 0);                               /* La couleur du texte change */
+}
+
+.jeux-prev-btn {
+  left: 15%;
+}
+
+.jeux-next-btn {
+  right: 15%;
+}
+
+
+/* barre de progression carrousel consoles */
+
+.progress-container-jeux {
+  position: absolute;
+  width: auto;
+  background-color: rgba(0, 0, 0);
+  border-radius: 1em;
+  top: 48.6%;
+  left: 25%;
+  right: 25%;
+  height: 0.75em;
+}
+
+.progress-bar-jeux {
+  background-color: rgba(240, 214, 40);
+  background-position: bottom;
+  color: rgba(0, 0, 0, 0);
+  border-radius: 1em;
+  text-align: center;
+  line-height: 0;
+  margin: 0.18em 0.25em;
+  height: 0.4em;
+}
+
+.price-favorite-jeux {
+  display: flex;
+  position: relative;
+  top: -2.7em;
+  height: 2.7em;
+  border-radius : 0em 0em 1em 1em;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0,0,0);
+
+}
+
+/* Mise en page affichage produits carrousel */
+.product-card-jeux { /*mise en page espace produits*/
+  padding: 0em;
+  margin: 0em;
+  width: auto;
+  height: 18.7em;
+}
+
+.product-card-jeux.visible {
+  opacity: 1;
+  display: block;
+}
+
+.product-card-jeux img {
+  object-fit: cover;          /* Couvre tout l'espace disponible sans déformer l'image */
+  width: 100%;
+  height: 100%;
+  object-position: center;    /* Le point d'intérêt de l'image est centré */
+  size : cover;
+  overflow: hidden;           /* Cache les parties de l'image qui dépassent du conteneur */
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255);
+}
+
+
+/* Alignement prix et icone favoris même ligne */
+
+
+.product-card-jeux p {
+  font-size: 1em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(245, 245, 247, 0.95);
+  margin: 0.8em 0em 0.8em 1em;
+}
+
+
+
+
+
+
+
+/* Styles pour l'ensemble produits derivés -------------------- */
+.home-produits {
+  opacity: 0;
+  transform: scale(90%);
+  transition: opacity 1s, transform 1s;
+  display: flex;
+  height: 40em;          
+  margin: 0.75em 0em 0em 0em;
+}
+
+/* Styles pour la partie gauche affichage */
+.vers-produits {
+  /* Background parameters */
+  flex: 0.5;                                            /* ne prends que la moité de la largeur */
+  background-image: url("/images/home-produits-derives.jpg");
+  background-position: right;
+  background-size: cover;
+  height: 40em;
+  overflow: hidden;
+
+  /* parametres textes */
+  display: flex;
+  flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+  justify-content: center;                              /* Centre les enfants verticalement */
+  align-items: center;                                 /* Centre les enfants horizontalement */                       
+  
+}
+
+.produits-button {
+  font-size: 2em;
+  font-weight: lighter;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+  background-color: rgba(40, 240, 56);
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+}
+
+.produits-button:hover {
+  background-color: transparent;                          /* Le fond disparaît */
+  border: 0.2em solid rgba(255, 255, 255, 0.87);        /* La bordure apparaît */
+  color: rgba(255, 255, 255, 0.87);                     /* La couleur du texte change */
+}
+
+
+/* Styles pour partie droite affichage consoles --------------------------------------------- */
+.produits-produits {
+  position: relative;
+  flex: 0.5;                                          /* Prends 50% de la largeur */
+  height: 40em;                                       /* Spécification de la hauteur */
+  display: grid;                                      /* format d'affichage */
+  grid-template-columns: repeat(3, 1fr);              /* 3 colonnes de taille égale */
+  grid-template-rows: repeat(2, 1fr);                 /* 2 lignes de taille égale*/
+  row-gap: 2.2em;                                       /* écart entre les lignes */
+  column-gap: 0.75em;                                    /* écart entre les colonnes */
+  place-items: top;                                   /* Centre à la fois horizontalement et verticalement */
+  overflow: hidden;
+  margin-right: 0.75em;   
+}
+
+.produits-prev-btn,
+.produits-next-btn {
+  position: absolute;
+  background: rgba(0, 0, 0);
+  font-size: 1.2em;
+  color: rgba(255, 255, 255);
+  border-radius: 1em;
+  cursor: pointer;
+  padding: 0.1em 0.4em;
+  border: 0.2em solid transparent;                          /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;           /* Transition pour background et bordure */
+  top: 47.2%;
+}
+
+.produits-prev-btn:hover,
+.produits-next-btn:hover {
+  background-color: transparent;                            /* Le fond disparaît */
+  border: 0.2em solid rgba(0, 0, 0);                  /* La bordure apparaît */
+  color: rgba(0, 0, 0);                               /* La couleur du texte change */
+}
+
+.produits-prev-btn {
+  left: 15%;
+}
+
+.produits-next-btn {
+  right: 15%;
+}
+
+
+/* barre de progression carrousel ordianteurs */
+
+.progress-container-produits {
+  position: absolute;
+  width: auto;
+  border-radius: 1em;
+  background-color: rgba(0, 0, 0);
+  top: 48.6%;
+  left: 25%;
+  right: 25%;
+  height: 0.75em;
+}
+
+.progress-bar-produits {
+  background-color: rgba(40, 240, 56);
+  background-position: bottom;
+  color: rgba(0, 0, 0, 0);
+  border-radius: 1em;
+  text-align: center;
+  line-height: 0;
+  margin: 0.18em 0.25em;
+  height: 0.4em;
+}
+
+.price-favorite-produits {
+  display: flex;
+  position: relative;
+  top: -2.7em;
+  height: 2.7em;
+  border-radius : 0em 0em 1em 1em;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0,0,0);
+
+}
+
+/* Mise en page affichage produits carrousel */
+.product-card-produits { /*mise en page espace produits*/
+  padding: 0em;
+  margin: 0em;
+  width: auto;
+  height: 18.7em;
+}
+
+.product-card-produits.visible {
+  opacity: 1;
+  display: block;
+}
+
+.product-card-produits img {
+  object-fit: cover;          /* Couvre tout l'espace disponible sans déformer l'image */
+  width: 100%;
+  height: 100%;
+  object-position: center;    /* Le point d'intérêt de l'image est centré */
+  size : cover;
+  overflow: hidden;           /* Cache les parties de l'image qui dépassent du conteneur */
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255);
+}
+
+
+/* Alignement prix et icone favoris même ligne */
+.product-card-produits p {
+  font-size: 1em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(245, 245, 247, 0.95);
+  margin: 0.8em 0em 0.8em 1em;
+}
+
+
+
+
+
+/* Main Banner contact styles ----------------------- */
+.main-banner-contact {
+  /* background parameters */
+  background-image: url("/images/home-le-projet.jpg");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* parametres dispositions texts*/
+  display: flex;
+  flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+  justify-content: center;                              /* Centre les enfants verticalement */
+  align-items: center;                                 /* Centre les enfants horizontalement */        
+  height: 40em;               /* Prend toute la hauteur de la fenêtre */
+  margin: 0.75em 0em;
+
+}
+
+.button-contact {
+  font-size: 2em;
+  font-weight: lighter;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+  background-color: rgba(88, 174, 240);
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                    /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;     /* Transition pour background et bordure */
+}
+
+.button-contact:hover {
+  background-color: transparent;                      /* Le fond disparaît */
+  border: 0.2em solid rgba(255, 255, 255, 1);          /* La bordure apparaît */
+  color: rgba(255, 255, 255, 1);                /* La couleur du texte change */
+}
+
+
+
+/*Mise en page icon favoris */
+.favorite-icon {
+  display: flex;
+  cursor: pointer;
+  background-image: url("/images/favoris.png");
+  background-size: cover;
+  height: 1.8em;
+  width: 1.8em;
+  margin-right: 0.5em;
+  margin-top : 0.45em;
+}
+
+.favorite-icon.favorited {
+  background-image: url("/images/favoris-active.png");
+}
+
+
+/* Responsive pour doubme écran */
+@media screen and (min-width: 99em) {
+  .achat-vente-jeux-vidéo {
+    /* Styles pour centrer .main */
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 98em; /* exemple de largeur */
+  }
+}
+
+/*Responsive pour tablettes */
+@media (max-width: 1100px) {
+
+  body {
+    background-color: rgba(220, 220, 220);
+  }
+
+  .achat-vente-jeux-video-occasion, .achat-vente-occasion-console, .achat-revente-occasion-ordinateurs, .achat-vente-occasion-jeux-video, .achat-vente-occasion-produits-derives, .achat-vente-occasion-gaming {
+    font-size: 4em;
+  }
+
+  .achat-revente-occasion-france, .achat-revente-occasion-consoles, .achat-vente-occasion-ordinateurs, .achat-revente-occasion-jeux-vidéo, .achat-revente-occasion-produits-dérivés, .achat-revente-occasion-gaming  {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 2.5em;
+  }
+
+  /* background parameters */
+  /* nouveau */
+  .occasion-consoles-web {
+    height: 25em;
+    margin-top: 3.8em;
+  }
+
+  .logo-ixewo-black {
+    height: 4em;
+  }
+
+  #errorMessage {
+      width: 55%;                                 /* Limitez la largeur pour de meilleurs visuels */
+  }
+  
+
+  /* Styles globale consoles */
+  /* nouveau */
+  .home-consoles{
+    display: flex;
+    flex-direction: column;                       /* Organise les enfants verticalement home-consoles*/
+    height: 50em;    
+    margin-top: 0.75em;
+  }
+  
+  /* nouveau */
+  /* Styles pour partie gauche affichage consoles --------------------------------------------- */
+  .vers-consoles {
+    background-position: center;
+    margin-bottom: 0.75em;
+    background-size: cover;
+    height: 25em;
+  }
+
+  /* nouveau */
+  /* Styles pour partie droite affichage consoles --------------------------------------------- */
+  .produits-consoles {
+    grid-template-columns: repeat(3, 1fr);              /* 3 colonnes de taille égale */
+    grid-template-rows: repeat(1, 1fr);                 /* 1 lignes de taille égale*/
+    padding-bottom: 1.5em;
+    margin: 0em 0.75em 0em 0.75em; 
+    height: 25em;
+    row-gap: 2.5em;
+  }
+
+  /* nouveau */
+  .product-card-consoles {
+    height: 23em;
+  }
+
+  .consoles-prev-btn,
+  .consoles-next-btn {
+    top: 91%;
+  }
+
+  .consoles-prev-btn {
+    left: 18%;
+  }
+
+  .consoles-next-btn {
+    right: 18%;
+  }
+
+
+  /* barre de progression carrousel consoles */
+  .progress-container-consoles {
+    top: 94%;
+  }
+
+
+
+
+
+
+
+  /* Styles globale ordianteurs */
+  /* nouveau */
+  .home-ordinateurs {
+    display: flex;
+    flex-direction: column;                       /* Organise les enfants verticalement home-ordinateurs*/
+    height: 50em;    
+    margin: 0;
+  }
+  
+  /* nouveau */
+  /* Styles pour partie gauche affichage ordinateurs --------------------------------------------- */
+  .vers-ordinateurs {
+    background-position: center;
+    margin-bottom: 0.75em;
+    background-size: cover;
+    height: 25em;
+    order: 1;
+  }
+
+  /* nouveau */
+  /* Styles pour partie droite affichage ordinateurs --------------------------------------------- */
+  .produits-ordinateurs {
+    grid-template-columns: repeat(3, 1fr);              /* 3 colonnes de taille égale */
+    grid-template-rows: repeat(1, 1fr);                 /* 1 lignes de taille égale*/
+    padding-bottom: 1.5em;
+    margin: 0em 0.75em 0em 0.75em; 
+    height: 25em;
+    order : 2;
+    row-gap: 2.5em;
+  }
+
+  /* nouveau */
+  .product-card-ordinateurs {
+    height: 23em;
+  }
+
+  .ordinateurs-prev-btn,
+  .ordinateurs-next-btn {
+    top: 91%;
+  }
+
+  .ordinateurs-prev-btn {
+    left: 18%;
+  }
+
+  .ordinateurs-next-btn {
+    right: 18%;
+  }
+
+
+  /* barre de progression carrousel consoles */
+  .progress-container-ordinateurs {
+    top: 94%;
+  }
+  
+
+
+
+
+
+
+  /* Styles globale jeux-videos */
+  /* nouveau */
+  .home-jeux {
+    display: flex;
+    flex-direction: column;                       /* Organise les enfants verticalement home-jeux*/
+    height: 50em;    
+    margin-top: 0em;
+  }
+  
+  /* nouveau */
+  /* Styles pour partie gauche affichage jeux --------------------------------------------- */
+  .vers-jeux {
+    background-position: center;
+    margin-bottom: 0.75em;
+    background-size: cover;
+    height: 25em;
+  }
+
+  /* nouveau */
+  /* Styles pour partie droite affichage jeux --------------------------------------------- */
+  .produits-jeux {
+    grid-template-columns: repeat(3, 1fr);              /* 3 colonnes de taille égale */
+    grid-template-rows: repeat(1, 1fr);                 /* 1 lignes de taille égale*/
+    padding-bottom: 1.5em;
+    margin: 0em 0.75em 0em 0.75em; 
+    height: 25em;
+    row-gap: 2.5em;
+  }
+
+  /* nouveau */
+  .product-card-jeux {
+    height: 23em;
+  }
+
+  .jeux-prev-btn,
+  .jeux-next-btn {
+    top: 91%;
+  }
+
+  .jeux-prev-btn {
+    left: 18%;
+  }
+
+  .jeux-next-btn {
+    right: 18%;
+  }
+
+
+  /* barre de progression carrousel jeux */
+  .progress-container-jeux {
+    top: 94%;
+  }
+
+
+
+
+
+
+  /* Styles globale produits */
+  /* nouveau */
+  .home-produits {
+    display: flex;
+    flex-direction: column;                       /* Organise les enfants verticalement home-produits*/
+    height: 50em;    
+    margin: 0;
+  }
+  
+  /* nouveau */
+  /* Styles pour partie gauche affichage produits --------------------------------------------- */
+  .vers-produits {
+    background-position: center;
+    margin-bottom: 0.75em;
+    background-size: cover;
+    height: 25em;
+    order: 1;
+  }
+
+  /* nouveau */
+  /* Styles pour partie droite affichage produits --------------------------------------------- */
+  .produits-produits {
+    grid-template-columns: repeat(3, 1fr);              /* 3 colonnes de taille égale */
+    grid-template-rows: repeat(1, 1fr);                 /* 1 lignes de taille égale*/
+    padding-bottom: 1.5em;
+    margin: 0em 0.75em 0em 0.75em; 
+    height: 25em;
+    order : 2;
+    row-gap: 2.5em;
+  }
+
+  /* nouveau */
+  .product-card-produits {
+    height: 23em;
+  }
+
+  .produits-prev-btn,
+  .produits-next-btn {
+    top: 91%;
+  }
+
+  .produits-prev-btn {
+    left: 18%;
+  }
+
+  .produits-next-btn {
+    right: 18%;
+  }
+
+
+  /* barre de progression carrousel consoles */
+  .progress-container-produits {
+    top: 94%;
+  }
+
+
+  /* background parameters */
+  /* nouveau */
+  .main-banner-contact {
+    height: 25em;
+    margin: 0 0 0.75em 0;
+  }
+}
+
+@media (max-width: 750px) {
+
+  body {
+    background-color: rgba(220, 220, 220);
+  }
+
+  .achat-vente-jeux-video-occasion, .achat-vente-occasion-console, .achat-revente-occasion-ordinateurs, .achat-vente-occasion-jeux-video, .achat-vente-occasion-produits-derives, .achat-vente-occasion-gaming {
+    font-size: 2em;
+    margin: 0 0 0.2em 0;
+  }
+
+  .achat-revente-occasion-france, .achat-revente-occasion-consoles, .achat-vente-occasion-ordinateurs, .achat-revente-occasion-jeux-vidéo, .achat-revente-occasion-produits-dérivés, .achat-revente-occasion-gaming, h3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0em 0em 0.5em 0em;
+  }
+
+
+  /* background parameters */
+  .occasion-consoles-web {
+    background-size: 40em;
+    height: 17em;
+    flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+    margin-top: 2.7em;
+  }
+
+  .logo-ixewo-black {
+    height: 2.5em;
+  }
+  
+  .button-ixewo {
+    font-size: 1.3em;
+  }
+
+  .header-container {
+    margin-bottom: 0.5em;
+  }
+
+
+
+
+  /* Styles globale consoles */
+  .home-consoles {
+    display: flex;
+    flex-direction: column;                       /* Organise les enfants verticalement home-consoles*/
+    height: 38em;          
+    margin: 0em;
+  }
+  
+  /* Styles pour partie gauche affichage consoles --------------------------------------------- */
+  .vers-consoles {
+    background-position: center;
+    background-size: cover;
+    margin: 0.4em 0;
+  }
+
+  .consoles-button {
+    font-size: 1.3em;
+  }
+
+  .product-card-consoles {
+    height: 16em;
+  }
+
+  /* Styles pour partie droite affichage consoles --------------------------------------------- */
+  .produits-consoles {
+    grid-template-columns: repeat(2, 1fr);              /* 2 colonnes de taille égale */
+    grid-template-rows: repeat(1, 1fr);                 /* 1 lignes de taille égale*/
+    padding-bottom: 0em;
+    margin: 0em 0.4em 0em 0.4em; 
+    row-gap:  3.5em;
+    column-gap: 0.4em;
+  }
+
+  .consoles-prev-btn,
+  .consoles-next-btn {
+    top: 87.5%;
+  }
+
+  .consoles-prev-btn {
+    left: 13%;
+  }
+
+  .consoles-next-btn {
+    right: 13%;
+  }
+
+
+  /* barre de progression carrousel jeux */
+  .progress-container-consoles {
+    top: 91%;
+  }
+
+  .product-card-consoles p {
+    margin : auto 0em auto 1em;
+  }
+
+
+
+
+
+
+  /* Styles globale ordinateurs */
+  .home-ordinateurs {
+    display: flex;
+    flex-direction: column;                       /* Organise les enfants verticalement home-ordinateurs*/
+    height: 38em;          
+    margin: 0em;
+  }
+  
+  /* Styles pour partie gauche affichage ordinateurs --------------------------------------------- */
+  .vers-ordinateurs {
+    background-position: center;
+    background-size: cover;
+    margin: 0 0 0.4em 0;
+    order: 1;
+  }
+
+  .ordinateurs-button {
+    font-size: 1.3em;
+  }
+
+  .product-card-ordinateurs {
+    height: 16.2em;
+  }
+
+  /* Styles pour partie droite affichage ordinateurs --------------------------------------------- */
+  .produits-ordinateurs {
+    grid-template-columns: repeat(2, 1fr);              /* 2 colonnes de taille égale */
+    grid-template-rows: repeat(1, 1fr);                 /* 1 lignes de taille égale*/
+    padding-bottom: 0em;
+    margin: 0em 0.4em 0em 0.4em; 
+    row-gap: 3.5em;
+    column-gap: 0.4em;
+    order: 2;
+  }
+
+  .ordinateurs-prev-btn,
+  .ordinateurs-next-btn {
+    top: 87.5%;
+  }
+
+  .ordinateurs-prev-btn {
+    left: 13%;
+  }
+
+  .ordinateurs-next-btn {
+    right: 13%;
+  }
+
+
+  /* barre de progression carrousel ordinateurs */
+  .progress-container-ordinateurs {
+    top: 91%;
+  }
+
+  .product-card-ordinateurs p {
+    margin : auto 0em auto 1em;
+  }
+  
+  
+
+
+
+
+  /* Styles globale jeux-vidéos */
+  .home-jeux {
+    display: flex;
+    flex-direction: column;                       /* Organise les enfants verticalement home-jeux*/
+    height: 38em;          
+    margin: 0em;
+  }
+  
+  /* Styles pour partie gauche affichage jeux --------------------------------------------- */
+  .vers-jeux {
+    background-position: center;
+    background-size: cover;
+    margin: 0 0 0.4em 0;
+  }
+
+  .jeux-button {
+    font-size: 1.3em;
+  }
+
+  .product-card-jeux {
+    height: 16.2em;
+  }
+
+  /* Styles pour partie droite affichage jeux --------------------------------------------- */
+  .produits-jeux {
+    grid-template-columns: repeat(2, 1fr);              /* 2 colonnes de taille égale */
+    grid-template-rows: repeat(1, 1fr);                 /* 1 lignes de taille égale*/
+    padding-bottom: 0em;
+    margin: 0em 0.4em 0em 0.4em; 
+    row-gap:  3.5em;
+    column-gap: 0.4em;
+  }
+
+  .jeux-prev-btn,
+  .jeux-next-btn {
+    top: 87.5%;
+  }
+
+  .jeux-prev-btn {
+    left: 13%;
+  }
+
+  .jeux-next-btn {
+    right: 13%;
+  }
+
+
+  /* barre de progression carrousel jeux */
+  .progress-container-jeux {
+    top: 91%;
+  }
+
+  .product-card-jeux p {
+    margin : auto 0em auto 1em;
+  }
+
+  .progress-bar-consoles, .progress-bar-ordinateurs, .progress-bar-jeux, .progress-bar-produits {
+    margin : 0.16em 0.13em
+  }
+
+
+
+  /* Styles globale produits */
+  .home-produits {
+    display: flex;
+    flex-direction: column;                       /* Organise les enfants verticalement home-produits*/
+    height: 38em;          
+    margin: 0em;
+  }
+  
+  /* Styles pour partie gauche affichage produits --------------------------------------------- */
+  .vers-produits {
+    background-position: center;
+    background-size: cover;
+    margin: 0 0 0.4em 0;
+    order: 1;
+  }
+
+  .produits-button {
+    font-size: 1.3em;
+  }
+
+  .product-card-produits {
+    height: 16.2em;
+  }
+
+  /* Styles pour partie droite affichage produits --------------------------------------------- */
+  .produits-produits {
+    grid-template-columns: repeat(2, 1fr);              /* 2 colonnes de taille égale */
+    grid-template-rows: repeat(1, 1fr);                 /* 1 lignes de taille égale*/
+    padding-bottom: 0em;
+    margin: 0em 0.4em 0em 0.4em; 
+    row-gap: 3.5em;
+    column-gap: 0.4em;
+    order: 2;
+  }
+
+  .produits-prev-btn,
+  .produits-next-btn {
+    top: 87.5%;
+  }
+
+  .produits-prev-btn {
+    left: 13%;
+  }
+
+  .produits-next-btn {
+    right: 13%;
+  }
+
+
+  /* barre de progression carrousel produits */
+  .progress-container-produits {
+    top: 91%;
+  }
+
+  .product-card-produits p {
+    margin : auto 0em auto 1em;
+  }
+
+  #errorMessage {
+      width: 85%;                                 /* Limitez la largeur pour de meilleurs visuels */
+  }
+
+
+  /* background parameters */
+  /* background parameters */
+  .main-banner-contact {
+    height: 17em;
+    flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+    margin-bottom: 0.4em;
+  }
+  
+  .button-contact {
+    font-size: 1.3em;
+  }
+
+
+}

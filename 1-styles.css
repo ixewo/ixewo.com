@@ -1,0 +1,288 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;  
+}
+
+/* font */
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/Avenir-Next-LT-Pro-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Style principale du header*/
+header {
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center; /*alignement vertical */
+  justify-content: center; /*alignement horizontal */
+  font-family: 'Avenir', sans-serif;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* Applique un effet de flou */
+
+}
+
+/* Icon position ordinateurs */
+.header-div .menu-hamburger-header {
+  flex: 1;
+}
+
+.header-div .logo-ixewo-header {
+  flex: 1;
+}
+
+.header-div .main-nav-header {
+  flex: 2;
+}
+
+.header-div .search-container-header {
+  flex: 3;
+}
+
+/* Icon styles */
+.logo-ixewo-header, 
+.logo-search-header, 
+.logo-menu-hamburger-header,
+.img-cross-header,
+.logo-menu-close-header{
+  cursor: pointer;
+  width: 2em;
+  height: auto;
+  margin: 0.4em;
+  filter: brightness(0.9);
+  transition: filter 0.3s;
+  vertical-align: middle;
+  z-index: 12;
+}
+
+/* Menu hambergur style */
+.menu-hamburger-header {
+  display: none;
+}
+
+/* Navigation Styles */
+.main-nav-header {
+  align-items: center; /*alignement vertical */
+  justify-content: center; /*alignement horizontal */
+  display: flex;
+  transition: opacity 0.5s ease, max-width 0.5s ease;
+  position:relative;
+  z-index:5;
+}
+
+/* Styles spécifiques à l'en-tête */
+.main-nav-header a {
+  list-style: none;
+  cursor: pointer;
+  padding: 0em 0.5em 0em 0.5em;
+  color: rgba(245, 245, 247);
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 1em;
+  border: 0.3em solid rgba(0, 0, 0, 0);
+}
+
+.main-nav-header a:hover {
+  background-color: transparent; /* Le fond disparaît */
+  padding: 0.2em 0.7em;
+  border: 0.1em solid rgba(255, 255, 255); /* La bordure apparaît */
+  color: rgba(255, 255, 255); /* La couleur du texte change */
+}
+
+/* nouveau */
+.main-nav-header a.active {
+  background-color: transparent; /* Le fond disparaît */
+  padding: 0.2em 0.7em;
+  border: 0.1em solid rgba(255, 255, 255); /* La bordure apparaît */
+  color: rgba(255, 255, 255); /* La couleur du texte change */
+}
+
+/*bouton vendre */
+.vendre-button {
+  background-color: rgba(208, 40, 241);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 1em;
+  border: 0.3em solid rgba(208, 40, 241);
+}
+
+/*bouton profile */
+.profile-button {
+  background-color: rgba(88, 174, 240);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 1em;
+  border: 0.3em solid rgba(88, 174, 240);
+}
+
+/* Search Bar Style */
+.search-bar-header {
+  opacity: 0;
+  transition: opacity 0.5s ease, max-width 0.5s ease;
+  z-index:1;
+  position:absolute;
+  display: flex;
+}
+
+.search-bar-header.active {
+  z-index:10;
+  align-items:center; /*alignement vertical */
+  justify-content: center; /*alignement horizontal */
+}
+
+.search-bar-header input[type="text"] {
+  color: var(--main-bg-color); /* Couleur du texte */
+  font-family: var(--main-font);
+  font-size: 1.2em; /* Taille de la police */
+  border-radius: 1em;
+  border-color: var(--main-bg-color);
+  width: 30em;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  height: 1.5em;
+}
+
+.search-bar-header input[type="text"]::placeholder {
+  color: var(--main-bg-color);
+}
+
+/*Responsive pour tablettes */
+@media(max-width: 1100px) {
+
+  /* nouveau */
+  .logo-ixewo-header, .logo-search-header, .logo-menu-hamburger-header, .img-cross-header, .logo-menu-close-header {
+    width: 3em;
+    height: auto;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container-header {
+    z-index: 10;
+  }
+
+  .search-container-header {
+    z-index: 15;
+  }
+
+  /*Affichage menu-hamburger*/
+  .menu-hamburger-header {
+    display: flex;
+    transition: opacity 0.5s ease, max-width 0.5s ease;
+  }
+
+  .hidden {
+    display: none;
+    transition: opacity 1s ease, max-width 1s ease;
+  }
+
+  /* affichage main-nav */
+  .main-nav-header {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    width: 100%;
+    position: absolute;
+    margin: 33.6em 0em 0em 0em;
+    padding: 0.5em 0em 0.5em 0em;
+    background-color: rgb(0, 0, 0);
+    transition: opacity 1s ease, max-width 1s ease;
+  }
+
+  .main-nav-header a {
+    font-size: 2em;
+  }
+
+  /* Search Bar Style */
+  .search-bar-header {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    width: 100%; /* Prendre toute la largeur du header */
+  }
+
+  .search-bar-header input[type="text"] {
+    width: 60vw;
+    font-size: 1.8em;
+  }
+
+  .main-nav-header {
+    display: none;
+  }
+}
+
+/*Responsive pour téléphones */
+@media(max-width: 750px) {
+
+    /* nouveau */
+  .logo-ixewo-header, .logo-search-header, .logo-menu-hamburger-header, .img-cross-header, .logo-menu-close-header {
+    width: 2em;
+    height: auto;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container-header {
+    z-index: 10;
+  }
+  
+  .search-container-header {
+    z-index: 15;
+  }
+
+  /*Affichage menu-hamburger*/
+  .menu-hamburger-header {
+    display: flex;
+    transition: opacity 0.5s ease, max-width 0.5s ease;
+  }
+
+  .hidden {
+    display: none;
+    transition: opacity 1s ease, max-width 1s ease;
+  }
+
+  /* affichage main-nav */
+  .main-nav-header {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    width: 100%;
+    position: absolute;
+    margin: 23em 0em 0em 0em;
+    padding: 0.5em 0em 0.5em 0em;
+    background-color: rgb(0, 0, 0);
+    transition: opacity 1s ease, max-width 1s ease;
+  }
+
+  .main-nav-header a {
+    font-size: 1.3em;
+  }
+
+  /* Search Bar Style */
+    .search-bar-header {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    width: 100%; /* Prendre toute la largeur du header */
+  }
+  
+  .search-bar-header input[type="text"] {
+    width: 70vw;
+    font-size: 1.2em;
+  }
+
+  .main-nav-header {
+    display: none;
+  }
+}

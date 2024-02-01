@@ -1,0 +1,89 @@
+/* Variables */
+:root {
+  --main-bg-color: rgba(245, 245, 247, 0.95);
+}
+
+/* font */
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/Avenir-Next-LT-Pro-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+/* Footer Styles */
+footer {
+  display: flex;
+  max-width: 100vw;
+  align-items: center;                          /*alignement vertical */
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgba(245, 245, 247, 0.95);
+  font-family: 'Avenir', sans-serif;
+  box-sizing: border-box; /* Ajoutez cette ligne */
+  padding: 0 0.4em;
+}
+
+.container-footer {
+  width: auto;
+}
+
+.logo-container-footer {
+  width: auto;
+}
+
+.lien {
+  color : rgba(240,240,240);
+}
+
+footer p {
+  margin: 0.5em 0em 0.5em 0em;
+  color: rgba(245, 245, 247);
+  font-size: 1.2em;
+  background-color: rgba(255,255,255,0);
+  padding: 0;
+}
+
+.logo-instagram,
+.logo-linkedin,
+.logo-tiktok {
+  cursor: pointer;
+  width: 2em;
+  height: auto;
+  margin: 0.4em 0em 0.4em 0em;
+  filter: brightness(0.9);
+  transition: filter 0.3s;
+  vertical-align: middle;
+}
+
+@media (max-width: 1100px) {
+  .logo-instagram,
+  .logo-linkedin,
+  .logo-tiktok {
+    width: 3em;
+    height: auto;
+  }
+
+}
+
+/*Responsive pour téléphones */
+@media (max-width: 750px) {
+  footer p {
+    margin: 0em 0em 0em 0em;
+    font-size: 0.75em;
+  }
+
+  .container-footer {
+    width: auto;
+  }
+
+  .logo-instagram, .logo-linkedin, .logo-tiktok {
+    width: 2em;
+    height: auto;
+  }
+
+}

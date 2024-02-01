@@ -1,0 +1,224 @@
+/* font */
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/Avenir-Next-LT-Pro-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirB';
+    src: url('/fonts/Avenir-Next-LT-Pro-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Global Styles */
+body {
+  font-family: 'Avenir', sans-serif;
+  background-color: rgba(245, 245, 247);
+  margin: 0;
+  padding: 0;  
+}
+
+.main {
+  display: flex;
+  flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+  justify-content: center;                              /* Centre les enfants verticalement */
+  min-height: 96vh;
+}
+
+
+/* Titre pages */
+.container-consoles, .container-consoles1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre-consoles {
+  /* background-color: rgba(0, 0, 0); */
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 100%;
+  background-position: left;
+  overflow: hidden;
+  margin: 3.5em 30% 0 30%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.titre-consoles1 {
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 100%;
+  background-position: left;
+  margin: 0 30% 0.75em 30%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.titre-consoles h1 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(255, 255, 255);
+  margin: 0.5% 0;
+}
+
+.h3 {
+  color: rgba(5, 5, 5);
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+}
+
+.titre-consoles1 h1 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(0, 0, 0, 0);
+  margin: 0.5% 0;
+}
+
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: lighter;
+  text-align: center;
+  background-color: rgba(255,255,255);
+  margin: 0 30%;
+  padding: 1% 2% 0 2%;
+}
+
+
+/* styles bouton */
+.activate-informations {
+  margin: 0em 30% 0em 30%;
+  background-color: rgba(255,255,255);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* Centre les enfants horizontalement */
+  justify-content:center;
+  padding: 0.5em 0;
+}
+
+/* styles boutons */
+.home-but, .profile-but {
+  width: 40%;
+  text-align: center;
+  padding: 0.5em 0em;
+  font-size: 1.5em;
+  margin: 0.5em;
+  cursor: pointer;
+  border-radius: 2em;
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 100%;
+  background-position: bottom;
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border: 0.2em solid rgba(88, 174, 240, 0);
+}
+
+
+.vendre-but {
+  width: 40%;
+  text-align: center;
+  padding: 0.5em 0em;
+  font-size: 1.5em;
+  margin: 0.5em;
+  cursor: pointer;
+  border-radius: 2em;
+  background-image: url(/images/home-consoles.jpg);
+  background-size: 100%;
+  background-position: bottom;
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border: 0.2em solid rgba(0, 0, 0, 0);
+}
+
+.home-but:hover, .profile-but:hover, .vendre-but:hover {
+  background-color: transparent; /* Le fond disparaît */
+  padding: 0.2em auto;
+  border: 0.2em solid rgba(5, 5, 5, 0.9); /* La bordure apparaît */
+  color: rgba(5, 5, 5, 0.9); /* La couleur du texte change */
+  background-image: none;
+}
+
+@media screen and (min-width: 99em) {
+  .main {
+    /* Styles pour centrer .main */
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 98em; /* exemple de largeur */
+  }
+}
+
+
+
+/*Responsive pour tablettes */
+@media (max-width: 1100px) {
+
+  body {
+    background-color: rgba(220, 220, 220);
+  }
+
+  .titre-consoles {
+    margin:  3.5em 15% 0 15%;;
+  }
+
+  .titre-consoles1 {
+    margin: 0 15% 0.75em 15%;
+  }
+
+  .activate-informations {
+    margin: 0em 15%;
+  }
+
+  h2 {
+    margin: 0 15%;
+  }
+
+  .titre-consoles h1, .titre-consoles1 h1 {
+    font-size: 2.3em;
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  body {
+    background-color: rgba(220, 220, 220);
+  }
+
+  .titre-consoles {
+    margin:  3.2em 0.4em 0 0.4em;
+  }
+
+  .titre-consoles1 {
+    margin: 0 0.4em 0.4em 0.4em;
+  }
+
+  .activate-informations {
+    margin: 0em 0.4em;
+  }
+
+  h2 {
+    margin: 0 0.2em;
+    font-size: 1.5em;
+    padding: 4% 0 0 0;
+  }
+
+  .home-but, 
+  .profile-but,
+  .vendre-but {
+    width: 60%;
+  }
+
+  .titre-consoles h1, .titre-consoles1 h1 {
+    font-size: 2.5em;
+  }
+}

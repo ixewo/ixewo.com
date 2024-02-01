@@ -1,0 +1,325 @@
+/* font */
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/Avenir-Next-LT-Pro-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirB';
+    src: url('/fonts/Avenir-Next-LT-Pro-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Avenir', sans-serif;
+  background-color: rgba(245, 245, 247);
+  margin: 0;
+  padding: 0;  
+}
+
+.main {
+  display: flex;
+  flex-direction: column;                               /* Organise les enfants verticalement home-consoles*/
+  justify-content: center;                              /* Centre les enfants verticalement */
+  min-height: 96vh;
+}
+
+
+
+/* Titre pages */
+.container-consoles, .container-consoles1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre-consoles {
+  /* background-color: rgba(0, 0, 0); */
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 100%;
+  background-position: left;
+  overflow: hidden;
+  margin: 3.5em 28% 0 28%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.titre-consoles1 {
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 100%;
+  background-position: left;
+  margin: 0 28% 0.75em 28%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.titre-consoles h1 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(255, 255, 255);
+  margin: 0.5% 0;
+}
+
+.titre-consoles1 h1 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(0, 0, 0, 0);
+  margin: 0.5% 0;
+}
+
+h2 {
+  display: flex;
+  font-size: 1.5em;
+  align-items: center;        /* Centre les enfants horizontalement */
+  justify-content:center;
+  margin: 0.5em 0em 0em 0em;
+}
+
+h4 {
+  display: flex;
+  font-size: 1.3em;
+  align-items: center;        /* Centre les enfants horizontalement */
+  justify-content:center;
+  margin: 0.5em 0em 0em 0em;
+}
+
+.h6 {
+  color: rgba(88, 174, 240); 
+}
+
+h5 {
+  display: flex;
+  font-size: 1em;
+  align-items: center;        /* Centre les enfants horizontalement */
+  justify-content:center;
+  margin: 0.5em 0em 1.5em 0em;
+}
+
+h6 {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+p {
+  display: flex;
+  font-size: 1em;
+  align-items: center;        /* Centre les enfants horizontalement */
+  justify-content:center;
+  background-color: rgba(255,255,255);
+  padding: 1em;
+  margin: 0 28%;
+}
+
+.message {
+  color: rgba(241, 49, 40);
+  padding: 1em 0;
+  font-weight: bold;
+}
+
+.success-message {
+  color: rgba(40, 240, 56); /* Vert */
+  padding: 1em 0;
+  font-weight: bold; /* Texte en gras */
+}
+
+
+/* Styles pour le bouton de suppression */
+.image-container1, .image-container2, .image-container3, .image-container4, .image-container5 {
+    position: relative;
+    display: inline-block; /* ou 'block' selon votre mise en page */
+}
+
+.delete-button {
+    position: absolute;
+    top: 25px;  /* Ajustez selon le besoin */
+    right: 5px; /* Ajustez selon le besoin */
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.delete-button img {
+    width: 2.5em; /* Ajustez la taille de l'icône de suppression */
+    height: auto;
+}
+
+
+
+
+/* Styles form */
+.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* Centre les enfants horizontalement */
+  justify-content:center;
+  margin: 0 28%;
+  background-color: rgba(255,255,255);
+}
+
+#titre, #prix,  #categorie, #etat {
+  width: 55%;
+  text-align: center;
+  border-radius: 2em;
+  border: 0.2em solid rgba(5, 5, 5, 0.9);                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  padding: 0.5em 0em;
+  font-size: 1em;
+  margin : 0.5em 0 1em 0;
+  background-color: rgba(245, 245, 247);
+}
+
+#description {
+  min-width: 85%;
+  max-width: 85%;
+  min-height: 30vh;
+  max-height: 30vh;
+  text-align: justify;
+  border-radius: 2em;
+  border: 0.2em solid rgba(5, 5, 5, 0.9);
+  font-size: 1em;
+  margin: 0.5em 0 1em 0;
+  padding: 0.5em 1em;
+  background-color: rgba(245, 245, 247);
+  font-family: var(--main-font);
+}
+
+#image_path1, #image_path2, #image_path3, #image_path4 ,#image_path5 {
+  font-size: 1em;
+  margin : 1em 0 1em;
+}
+
+#image-principale, #image-secondaires2, #image-secondaires3, #image-secondaires4, #image-secondaires5, #image-defaut1, #image-defaut2, #image-defaut3, #image-defaut4, #image-defaut5 {
+  width: 20em;
+  height: 20em;
+  object-fit: cover;          /* Couvre tout l'espace disponible sans déformer l'image */
+  object-position: center;    /* Le point d'intérêt de l'image est centré */
+  overflow: hidden;           /* Cache les parties de l'image qui dépassent du conteneur */
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255);
+  border: 0.2em solid rgba(5, 5, 5, 0.9);
+  margin-top: 1em;
+}
+
+/*bouton recherche */
+.login {
+  width: 40%;
+  text-align: center;
+  padding: 0.3em 0em;
+  font-size: 1.3em;
+  margin: 0em 0em 0.75em 0em;
+  cursor: pointer;
+  border-radius: 2em;
+  background-color: rgba(88, 174, 240);
+  color: rgba(245, 245, 247, 0.95);
+  text-decoration: none;
+  border: 0.2em solid rgba(88, 174, 240);
+}
+
+.login:hover {
+  background-color: transparent; /* Le fond disparaît */
+  padding: 0.2em auto;
+  border: 0.2em solid rgba(5, 5, 5, 0.9); /* La bordure apparaît */
+  color: rgba(5, 5, 5, 0.9); /* La couleur du texte change */
+}
+
+@media screen and (min-width: 99em) {
+  .main {
+    /* Styles pour centrer .main */
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 98em; /* exemple de largeur */
+  }
+}
+
+/*Responsive pour tablettes */
+@media (max-width: 1100px) {
+
+  body {
+    background-color: rgba(220, 220, 220);
+  }
+
+  .titre-consoles {
+    margin: 3.5em 11% 0em 11%;
+  }
+
+  .titre-consoles1 {
+    margin: 0em 11% 0.75em 11%;
+  }
+
+  .login-section {
+    margin: 0 11%;
+  }
+
+  p {
+    margin: 0 11%;
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  body {
+    background-color: rgba(220, 220, 220);
+  }
+
+  .titre-consoles {
+    margin: 3.2em 0.4em 0em 0.4em;
+  }
+
+  .titre-consoles1 {
+    margin: 0em 0.4em 0.4em 0.4em;
+  }
+
+  .titre-consoles h1 {
+    font-size: 2em;
+  }
+
+  .login-section {
+    margin: 0 0.4em;
+  }
+
+  p {
+    margin: 0 0.4em;
+  }
+
+  #titre, #prix, #categorie, #etat {
+    width: 80%;
+  }
+
+  h4  {
+    display: inline-table;
+    font-size: 1em;
+    text-align: center;
+    margin: 0.5em 0 0 0;
+    width: 100%;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  h5 {
+    font-size: 0.8em;
+    text-align: center;
+    margin: 0.5em 0 1.5em 0;
+    width: 100%;
+  }
+
+  .login {
+    width: 60%;
+    font-size: 1.3em;
+  }
+
+}

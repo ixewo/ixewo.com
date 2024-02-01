@@ -1,0 +1,356 @@
+/* font */
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/Avenir-Next-LT-Pro-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirB';
+    src: url('/fonts/Avenir-Next-LT-Pro-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Avenir', sans-serif;
+  background-color: rgba(245, 245, 247);
+  margin: 0;
+  padding: 0;  
+}
+
+.titre-FAQ0 {
+  display: flex;
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 100%;
+  background-position: left;
+  margin: 3.5em 8% 0 8%;
+  justify-content: center;
+}
+
+.titre-FAQ0 h1 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(255, 255, 255);
+  margin: 1% 0% 1% 0%;
+  line-height: 100%;
+}
+
+.container-FAQ2 {
+  display: none;
+}
+
+.titre-FAQ2 {
+  background-color: rgba(5, 5, 5, 0);
+  width: auto;
+  text-align: justify;
+  margin:0 8%;
+}
+
+.titre-FAQ2 h1 {
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: rgba(61 57, 56);
+  margin: 0;
+  padding: 0.3em;
+  background-color: rgba(255,255,255);
+}
+
+.titre-FAQ3 {
+  background-color: rgba(5, 5, 5, 0);
+  width: auto;
+  text-align: justify;
+  margin:0 8%;
+}
+
+.titre-FAQ3 h1 {
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: rgba(61 57, 56);
+  margin: 0;
+  padding: 0.3em;
+  background-color: rgba(255,255,255);
+}
+
+.h2 {
+  color: rgba(5, 5, 5); 
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+}
+
+
+/* Pourquoi */
+.container-FAQ1 {
+  display: flex;
+  margin-top: 0.75em;
+}
+
+.titre-FAQ1 {
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 100%;
+  background-position: left;
+  margin: 0 8% 0 8%;
+  width: 100%;
+  text-align: center;
+}
+
+.titre-FAQ1 h1 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(255, 255, 255);
+  margin: 1% 0% 1% 0%;
+  line-height: 100%;
+}
+
+.afficher-button {
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding: 0.2em 0;
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 160%;
+  background-position: top;
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+  margin: 1% 45% 0 45%;
+  width: 10%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cacher-button {
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding: 0.2em 0;
+  background-image: url("/images/home-consoles.jpg");
+  background-size: 160%;
+  background-position: top;
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+  margin: 1% 45% 0 45%;
+  width: 10%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-b {
+  padding: 0 0.2em;
+  background-color: rgba(88, 174, 240);
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+  cursor: pointer;
+}
+
+.btn-v {
+  padding: 0 0.2em;
+  background-color: rgba(208, 40, 241);
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+  cursor: pointer;
+}
+
+.btn-r {
+  padding: 0 0.2em;
+  background-color: rgba(241, 49, 40);
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 2em;
+  border: 0.2em solid transparent;                       /* Ajout d'une bordure transparente pour maintenir la taille du bouton */
+  transition: background-color 0.3s, border 0.3s;        /* Transition pour background et bordure */
+  cursor: pointer;
+}
+
+.afficher-button:hover, .cacher-button:hover, .btn-b:hover, .btn-v:hover, .btn-r:hover {
+  background-color: transparent;                          /* Le fond disparaît */
+  background-image: none;
+  border: 0.2em solid rgba(0, 0, 0);                    /* La bordure apparaît */
+  color: rgba(0, 0, 0);                                 /* La couleur du texte change */
+}
+
+
+/* Titre pages */
+.container-ordinateurs1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre-ordinateurs1 {
+  background-image: url("/images/home-le-projet2.jpg");
+  background-size: 100%;
+  background-position: left;
+  margin: 0.75em 8%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.titre-ordinateurs1 h1 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  font-family: 'AvenirB', sans-serif;
+  color: rgba(0, 0, 0, 0);
+  margin: 0.5% 0;
+}
+
+
+/* Responsive pour doubme écran */
+@media screen and (min-width: 99em) {
+  .main {
+    /* Styles pour centrer .main */
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 98em; /* exemple de largeur */
+  }
+}
+
+/*Responsive pour tablettes */
+@media (max-width: 1100px) {
+
+  body {
+    background-color: rgba(220, 220, 220);
+  }
+
+  .titre-FAQ0 {
+    margin: 4.50em 0.75em 0 0.75em;
+  }
+
+  .container-FAQ2 {
+    margin: 0 0.75em;
+  }
+
+  .titre-FAQ2 {
+    margin: 0;
+  }
+
+  .titre-FAQ2 h1 {
+    font-size: 1.5em;
+  }
+
+  .container-FAQ3 {
+    margin: 0 0.75em;
+  }
+
+  .titre-FAQ3 {
+    margin: 0;
+  }
+
+  .titre-FAQ3 h1 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+
+  .titre-FAQ1 {
+    margin: 0 0.75em;
+  }
+
+  .titre-FAQ1 h1 {
+    font-size: 2em;
+  }
+  
+  .h2 {
+    font-size: 1em;
+  }
+
+  .afficher-button, .cacher-button {
+    margin: 0.75em 42.5% 0 42.5%;
+  }
+
+  .titre-ordinateurs1 {
+    margin: 0.75em 13% 0.75em 13%;
+  }
+
+  .titre-ordinateurs h1, .titre-ordinateurs1 h1 {
+    font-size: 2em;
+  }
+  
+}
+
+
+@media (max-width: 750px) {
+
+  body {
+    background-color: rgba(220, 220, 220);
+  }
+  
+  .titre-FAQ0 {
+    margin: 3.5em 0.4em 0 0.4em;
+  }
+
+  .titre-FAQ0 h1 {
+    font-size: 2em;
+  }
+
+  .container-FAQ2 {
+    margin: 0 0.4em;
+  }
+
+  .titre-FAQ2 {
+    margin: 0;
+  }
+
+  .container-FAQ3 {
+    margin: 0 0.4em;
+  }
+
+  .titre-FAQ3 {
+    margin: 0;
+  }
+
+  .titre-FAQ3 h1 {
+    font-size: 1.3em;
+  }
+
+  .titre-FAQ2 h1 {
+    font-size: 1.3em;
+  }
+  
+
+  .container-FAQ1 {
+    margin-top: 0.4em;
+  }
+
+  .titre-FAQ1 {
+    margin: 0 0.4em;
+  }
+
+  .titre-FAQ1 h1 {
+    font-size: 1.5em;
+    padding: 1%;
+  }
+
+  .h2 {
+    font-size: 1em;
+  }
+
+
+  .afficher-button, .cacher-button {
+    margin: 0.4em 35% 0 35%;
+    width: 30%;
+  }
+
+  .titre-ordinateurs1 {
+    margin: 0.4em;
+  }
+
+}
